@@ -1,4 +1,4 @@
-# AI Agents & Vibe Coding for People w/o Tech & Coding Skills
+# AI Agents and Vibe Coding for People w/o Tech & Coding Skills
 
 Training materials for the course where you will be taught core principles and tools (Claude Code, Open Claw, and more) to be able to use AI agents for your work, set up and vibe code your own apps, scrape the web & more.
 
@@ -14,7 +14,7 @@ I know, you want to jump straight to the building process but hold your horses. 
 
 ## Setting Up Your Machine
 
-Install and configure your core tools.
+Install and configure your core tools. A fully working development environment and understanding the the dev env without becoming a dev in under an hour.
 
 ### VS Code & essential extensions. 
 
@@ -25,6 +25,8 @@ After installation we'll have a quick few minute tour how to use it and what is 
 It is IDE (integrated development environment) but it isn't as complex as it sounds. It is super easy actually. Think of it just as a bit more advanced text editor (Mac's TextEdit / Win's Notepad). It formats the code and displays different code parts in different colors for you to better understand. 
 
 ![VS Code vs TextEdit](images/001-vs-code-versus-text-editor.png)
+
+So, first things first - [download and install VSCode from here](https://code.visualstudio.com/download).
 
 #### File Explorer
 
@@ -56,5 +58,49 @@ Same way like you can have in multiple files open above, you can have multiple t
 
 ## GitHub
 
-1. [Create your Github account](https://github.com/signup) if you don't have one already.
-2. 
+Git is the standard version controlling (what?) today. The main benefit for you is to see what your agent (or you or your collegue/friend) has changed and either approve it, improve it or roll it back if you think it's no good and shall be done from scratch. Simple view:
+
+![Git changes](images/006-git.png)
+
+On the image above you can see that on the first line red is what was before and the green below what it was changed to. `&` in the middle of that changed line has a slightly lighter red background and below the `and` has slightly greener background so it is quick to visually identify that in the first line just the `&` was corrected to `and`.
+
+Then you can see many lines skipped as no changes there and lines 29 & 30 were added. Line 29 some text and line 30 just an empty line.
+
+Now you can decide if that change was fine or not. That's the main core idea of the Git so let's learn more by doing.
+
+### First steps
+
+1. To, use GitHub, you'll need to first [download & install Git](https://git-scm.com/install/). 
+2. [Create your Github account](https://github.com/signup) if you don't have one already.
+3. Click "Star" and "Follow" in the top right of [this course in GitHub](https://github.com/kasparpalgi/non-tech-ai-agents) the be up to date of any new content.
+4. [Download & install GitHub Desktop](https://desktop.github.com/download) in your machine.
+5. Once  installed it will offer you to login. Do that.
+6. Finally, go back to VSCode as you can now use your GitHub account to login so all your VScode settings, extensions and preferences will be synced when you re-install on a new computer:
+
+![VSCode Sync Settings](images/007-sync-vscode.png)
+
+If the image isn't enought then [here is the detailed instructions](https://code.visualstudio.com/docs/configure/settings-sync).
+
+# Comind soon (raw material from here on):
+
+* Node.js
+* Claude Code
+* Clipboard tools to be a power user (e.g. CopyQ on Mac and Ditto on Win)
+* Optional: Docker
+
+## Your First Workflow
+* How modern development actually works
+* Making small changes safely
+* The feedback loop: edit → run → fix
+  
+Outcome: You understand how to work, not just what tools to use.
+
+## Cloning Your First Boilerplate
+* What a boilerplate really is
+* Finding and cloning a repo using GitHub Desktop
+
+Outcome: You now have a real project running locally.
+
+# TODO:
+* Markdown
+* Web
