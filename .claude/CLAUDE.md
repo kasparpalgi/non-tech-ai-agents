@@ -1,10 +1,25 @@
-# About project
+# About Project
 
 Textbook about Claude Code, Gemini CLI, OpenClaw and other AI agents for non-tech people. Learn create own apps with AI agents. Setup AI agents. Use boilerplates. Also about scraping web.
 
 The whole book is in /README.md
 
-# Development Stack Context
+1. Read `README.md` for current state and outline.
+2. Edit `README.md` directly — no build step needed.
+3. Add images to `images/` if needed, reference them in the text.
+4. Add code examples to `code/` if needed.
+
+## About authoring the textbook
+
+- Write for non-technical readers — no jargon without explanation.
+- Use plain analogies (e.g. "like a more advanced Notepad").
+- Keep sections practical: explain → show → outcome.
+- Images go in `images/` and are referenced as `![Alt](images/filename.png)`.
+- Code examples go in `code/` and are shown inline as fenced code blocks.
+- Each section should end with an `Outcome:` line summarising what the reader gains.
+- Tone: friendly, encouraging, direct. Not condescending.
+
+# Sample Vibe Coding Stack Context
 
 IMPORTANT: develop in the main branch and do not commit your changes (I'll review and decide). For any other tasks do not ask for permissions.
 
