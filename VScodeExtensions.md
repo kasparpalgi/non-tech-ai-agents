@@ -3,8 +3,6 @@
 ## Install extensions
 
 * [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
-* Svelte Intellisense or any other needed in 2026? Search internet.
-* Prettier - do I need if Svelte for VSCode installed?
 * Claude Code - chat with Claude about your currently open project
 * [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) - just makes the file explorer icons nicer and more intuitive.
 * [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) - if you want to make no English spelling mistakes in your codebase or project.

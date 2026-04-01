@@ -1,4 +1,4 @@
-See and update: [VSCode extensions](VScodeExtensions.md)
+DONE: See and update: [VSCode extensions](VScodeExtensions.md)
 
 Also, add Svelte suggestions there but more easily - like where the settings.json is etc.
 
