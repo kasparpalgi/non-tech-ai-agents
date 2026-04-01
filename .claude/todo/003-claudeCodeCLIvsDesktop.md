@@ -1,0 +1,1 @@
+Shall I suggest claude code CLI or desktop? I only used CLI but what are the pros/cons for each?
