@@ -17,6 +17,12 @@ The whole book is in `/README.md`. Always read it first to understand the curren
 - Each section should end with an `Outcome:` line summarising what the reader gains.
 - Tone: friendly, encouraging, direct. Not condescending.
 
+## Quick search
+
+Use the **Brave Search MCP** for any web lookups (pricing, docs, latest versions, etc.). Prefer it over guessing from training data.
+
+For GitHub.com interactions (issues, PRs, comments) use the **GitHub MCP**. For local git operations (commits, log, diff) just run git commands directly — no MCP needed.
+
 ## Git rules
 
 IMPORTANT: develop in the main branch and do not commit changes (author reviews and decides). For any other tasks do not ask for permissions.

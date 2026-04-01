@@ -102,7 +102,74 @@ The **VS Code extension** is handy for quick questions ("what does this function
 
 ### MCP
 
+MCP stands for **Model Context Protocol** — think of them as plugins or add-ons for Claude Code. By default Claude can only see the files in your project. With MCPs you hand it new abilities: searching the web, opening a real browser, reading your calendar, and more.
 
+You install an MCP once per machine (or once per project) and after that Claude just uses it automatically when it makes sense.
+
+#### How to install an MCP
+
+You run one command in your VS Code terminal and Claude Code saves it for future sessions. Most MCPs need Node.js installed (you already did that in the setup steps above).
+
+#### Brave Search — let Claude search the web
+
+This is the most useful first MCP. Without it Claude only knows what is in your project files and its own training data. With Brave Search it can look things up on the internet mid-conversation.
+
+1. Go to [brave.com/search/api](https://brave.com/search/api/) and sign up for a free API key (the free tier is generous — 2 000 searches/month).
+2. Copy your API key, then run this in your terminal (replace `your_key_here` with the real key):
+
+```
+claude mcp add brave-search -e BRAVE_API_KEY=your_key_here -- npx -y @modelcontextprotocol/server-brave-search
+```
+
+Now you can say things like *"search for the latest pricing of Vercel"* and Claude will go look it up.
+
+#### Playwright — let Claude control a browser
+
+Playwright is a tool that drives a real browser — it can open pages, click buttons, fill in forms, and take screenshots, all on its own. This is useful for testing your app, scraping a website, or automating repetitive web tasks.
+
+```
+claude mcp add playwright -- npx -y @playwright/mcp@latest
+```
+
+After installing you can ask Claude things like *"open my app at localhost:3000 and take a screenshot"* or *"go to this page and fill in the sign-up form with test data"*.
+
+#### GitHub — create issues, open PRs, and read comments
+
+> **Wait — can't Claude just use git commands?** Yes. Claude Code can already run `git log`, `git commit`, `git diff`, and any other git command directly in your terminal without any MCP. You don't need an MCP to see your commit history or make a commit.
+>
+> The GitHub MCP adds something different: it talks to the **GitHub website** via its API. That means Claude can open a pull request, post a comment on an issue, or list all open issues — things that live on GitHub.com, not in your local files.
+
+If you want Claude to interact with GitHub.com (not just local git), here's how:
+
+1. Go to [github.com/settings/tokens](https://github.com/settings/tokens) and create a Personal Access Token (choose "classic", tick `repo` scope).
+2. Run:
+
+```
+claude mcp add github -e GITHUB_TOKEN=your_token -- npx -y @modelcontextprotocol/server-github
+```
+
+Now you can say *"create an issue titled 'Login button broken' in my repo"* and Claude will do it.
+
+#### Other useful MCPs
+
+| MCP | What it does | Install command |
+|---|---|---|
+| **Notion** | Read and write your Notion pages and databases | `claude mcp add notion -e NOTION_API_KEY=your_key -- npx -y @modelcontextprotocol/server-notion` |
+| **Slack** | Send messages and read channels | `claude mcp add slack -e SLACK_BOT_TOKEN=your_token -- npx -y @modelcontextprotocol/server-slack` |
+
+You can see all your installed MCPs at any time by running:
+
+```
+claude mcp list
+```
+
+And remove one you no longer want:
+
+```
+claude mcp remove brave-search
+```
+
+Outcome: Claude is no longer limited to your project files — it can search the web, browse real pages, manage GitHub, and connect to the tools you already use daily.
 
 # Coming soon (raw material from here on):
 
