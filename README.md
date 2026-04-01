@@ -75,16 +75,15 @@ Now you can decide if that change was fine or not. That's the main core idea of 
 3. Click "Star" and "Follow" in the top right of [this course in GitHub](https://github.com/kasparpalgi/non-tech-ai-agents) the be up to date of any new content.
 4. [Download & install GitHub Desktop](https://desktop.github.com/download) in your machine.
 5. Once  installed it will offer you to login. Do that.
-6. Finally, go back to VSCode as you can now use your GitHub account to login so all your VScode settings, extensions and preferences will be synced when you re-install on a new computer:
+6. Go back to VSCode as you can now use your GitHub account to login so all your VScode settings, extensions and preferences will be synced when you re-install on a new computer: ![VSCode Sync Settings](images/007-sync-vscode.png). If the image isn't enought then [here is the detailed instructions](https://code.visualstudio.com/docs/configure/settings-sync).
 
-![VSCode Sync Settings](images/007-sync-vscode.png)
-
-If the image isn't enought then [here is the detailed instructions](https://code.visualstudio.com/docs/configure/settings-sync).
+### Install 
 
 # Comind soon (raw material from here on):
 
 * Node.js
 * Claude Code
+* Extensions
 * Clipboard tools to be a power user (e.g. CopyQ on Mac and Ditto on Win)
 * Optional: Docker
 
