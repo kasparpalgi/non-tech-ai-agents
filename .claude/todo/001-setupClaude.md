@@ -1,0 +1,1 @@
+I have created initial files in /.claude folder. Understand the goal of this training material and boilerplate. Improve. Make better. Keep in mind also that the bigger is CLAUDE.md the more we increase the context window and token usage.

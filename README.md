@@ -1,4 +1,4 @@
-# AI Agents and Vibe Coding for People w/o Tech & Coding Skills
+# AI Agents and Vibe Coding for People w/o Tech and/or Coding Skills
 
 Training materials for the course where you will be taught core principles and tools (Claude Code, Open Claw, and more) to be able to use AI agents for your work, set up and vibe code your own apps, scrape the web & more.
 
@@ -86,6 +86,8 @@ Now you can decide if that change was fine or not. That's the main core idea of 
 * Extensions
 * Clipboard tools to be a power user (e.g. CopyQ on Mac and Ditto on Win)
 * Optional: Docker
+* Gemini CLI
+* Subagents
 
 ## Your First Workflow
 * How modern development actually works
