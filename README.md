@@ -171,14 +171,157 @@ claude mcp remove brave-search
 
 Outcome: Claude is no longer limited to your project files — it can search the web, browse real pages, manage GitHub, and connect to the tools you already use daily.
 
+## Skills — Saved Recipes for Claude
+
+Think of a **skill** as a saved recipe. You write down a set of instructions once — for example, "when I say `/standup`, look at what changed since yesterday and draft a three-sentence update I can paste into Slack" — save it, and from then on you just type `/standup` and Claude follows the recipe automatically.
+
+In Claude Code, skills are stored as short text files in a `.claude/skills/` folder inside your project (or in a global folder that applies to every project on your machine). You can:
+
+- **Use built-in skills** that ship with Claude Code — type `/` in the prompt to see the full list.
+- **Create your own** by adding a small text file with a name, a one-line description, and the instructions.
+
+### Creating your first skill
+
+1. Inside your project, create the folder `.claude/skills/` if it doesn't exist yet (you can do this right in the VS Code file explorer).
+2. Create a new file called `daily-standup.md` inside that folder and paste this in:
+
+```
+---
+name: daily-standup
+description: Summarise what changed in the project since yesterday and draft a short standup update.
+---
+
+Look at the git log from the last 24 hours. List the key changes in plain English.
+Then write a 3-sentence standup update I can paste into Slack.
+```
+
+3. Type `/exit` to close Claude Code and reopen it.
+4. Type `/daily-standup` — Claude now runs that recipe every time you use it.
+
+You can share this file with collaborators by committing it to GitHub. Anyone who clones the repo gets the skill automatically with no extra setup.
+
+Outcome: You capture any repeatable workflow as a skill and stop explaining the same instructions to Claude over and over.
+
+---
+
+## Subagents — Helpers That Work in the Background
+
+When you ask Claude something, it thinks step by step in one continuous thread — like reading a long book from front to back. A **subagent** is a fresh, separate thread that Claude spins up to handle a specific task on its own, then reports back with a summary before disappearing.
+
+Think of it this way: you are the manager, Claude is your assistant, and the subagent is a contractor your assistant hires for one job. The contractor goes off, does the work, and comes back with a report. You never have to watch them work.
+
+### When does this matter?
+
+Say you ask Claude: *"Read all 40 files in this project and write a summary of each."* If Claude reads all 40 files itself in one thread, it can start to lose track of earlier files by the time it reaches the last ones — its working memory fills up. Instead, it can spin up a subagent per file — each one reads a single file, writes a summary, and exits. The main Claude collects all the summaries at the end.
+
+You do not have to do anything special to trigger this. Claude decides on its own when subagents make sense. But knowing it exists means you can write better prompts for big tasks:
+
+> *"Work through this in parallel — delegate the research to subagents and give me a combined summary at the end."*
+
+Outcome: Big tasks that would overwhelm a single session get split up automatically, and you get a clean summary without the noise.
+
+---
+
+## Agent Teams — Multiple Claudes Working Together
+
+A subagent does one job and stops. An **agent team** is different: it is a group of Claude sessions that keep running, share a task list, and can send messages to each other.
+
+Picture three people sitting at three computers, all in the same group chat. One is researching, one is writing, one is reviewing. They talk to each other, hand off work, and anyone can update the shared list. That is roughly what agent teams do:
+
+- **Shared tasks** — all agents see the same to-do list and can tick things off.
+- **Peer messages** — one agent can ask another a question or hand it a piece of work.
+- **Independent loops** — each agent runs its own loop, so they genuinely work in parallel.
+
+### When would you use this?
+
+Agent teams shine for large, structured projects — for example, building a whole app where one agent designs the database, one writes the back end, and one builds the front end simultaneously.
+
+For day-to-day tasks you probably won't need teams. But knowing they exist means you can say *"run this as a coordinated team"* when a project is genuinely large and you want things done faster.
+
+Outcome: Tasks that would take one Claude session hours can be split across parallel agents, finishing in a fraction of the time.
+
+---
+
+## Hooks — Automatic Actions Outside the Conversation
+
+A **hook** is a script that runs automatically at a fixed moment — before Claude uses a tool, after it writes a file, or when a session ends. The critical difference from everything else: Claude does not run hooks; **your computer** runs them. They happen outside the conversation, unconditionally, every single time.
+
+Think of hooks like the automatic rules in a spreadsheet ("any time a cell in column B changes, highlight it red"). They are deterministic — they always do the same thing, no matter what.
+
+### Common uses
+
+| When | What the hook does |
+|---|---|
+| Before every file save | Runs a formatter so all your code looks tidy automatically |
+| After every tool call | Logs what Claude did so you have an audit trail |
+| Before a commit | Runs a quick check to catch obvious mistakes early |
+
+### Setting up a hook
+
+Hooks live in your Claude Code settings file (`.claude/settings.json`). Here is a simple example that logs every time Claude writes a file:
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'File written' >> .claude/activity.log"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+This says: every time Claude uses the Write tool, run that command. The result is a new line added to `activity.log` — a simple breadcrumb trail of every file Claude touched.
+
+You do not need to understand shell scripting to use hooks. Start by copying examples others share and modifying the command to suit your needs.
+
+Outcome: You can attach automatic guardrails, formatters, and logs to Claude's actions without writing any conversation prompts.
+
+---
+
+## Plugins and Marketplaces — Sharing What You Build
+
+Skills, MCPs, and hooks are all plain files. That means you can share them the same way you share any file: put them on GitHub, zip them up, or list them in a marketplace directory.
+
+**Marketplaces** are curated collections of ready-made extensions you can browse and install. Instead of writing your own Notion skill from scratch, you find one someone else already built, install it in one command, and you're done.
+
+The main places to find Claude Code extensions right now:
+
+| Directory | What you'll find |
+|---|---|
+| **GitHub** | Search `claude-mcp` or `claude-skills` for community packages |
+| **mcp.so** | A directory of MCP servers, browseable by category |
+| **Smithery** | A curated list with one-click install instructions |
+
+### Installing from a marketplace
+
+Most extensions follow the same pattern: you run a `claude mcp add` command (for MCPs) or copy a `.md` file into your `.claude/skills/` folder (for skills). The marketplace page shows you the exact command — there is nothing to figure out.
+
+### Publishing your own
+
+If you build a skill that saves you time every day, other people probably need it too. Share it by:
+
+1. Creating a public GitHub repository with your skill files.
+2. Adding a short README explaining what it does and how to install it.
+3. Tagging the repo `claude-skills` so others can find it in a search.
+
+Outcome: You are not limited to what ships with Claude Code — a whole ecosystem of ready-made extensions is waiting, and you can contribute your own when you're ready.
+
+---
+
 # Coming soon (raw material from here on):
 
-* MCP, skills etc.
 * /clear and other /commands
 * Clipboard tools to be a power user (e.g. CopyQ on Mac and Ditto on Win)
 * Optional: Docker
 * Gemini CLI
-* Subagents
 
 ## Your First Workflow
 * How modern development actually works
