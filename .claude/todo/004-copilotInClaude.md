@@ -1,1 +1,0 @@
-I have Claude 18€ subscription and I use claude code but does Claude Code have like Copilot fir VSCode that it will auto suggest while I write myself code and then I can press tab to have that code?
