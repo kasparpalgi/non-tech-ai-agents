@@ -79,13 +79,35 @@ Now you can decide if that change was fine or not. That's the main core idea of 
 7. Click "Extensions" in the top left icon tabs and install [VSCode extensions](VScodeExtensions.md)
 8. Download & Install [NodeJS](https://nodejs.org/en/download). Needed to run Claude Code, many other tools we'll be using, and for the vibe coded apps to run locally.
 9. Finally install Claude Code from your terminal window on Mac/Linux: `curl -fsSL https://claude.ai/install.sh | bash` & on Win: `irm https://claude.ai/install.ps1 | iex`
-### Install 
 
-# Comind soon (raw material from here on):
+## Claude Code: CLI, Desktop, or Extension?
 
-* Node.js
-* Claude Code
-* Extensions
+After installing Claude Code you will notice there are actually three ways to run it. Here is the quick comparison so you know what to pick.
+
+| | CLI (terminal) | Desktop app | VS Code extension |
+|---|---|---|---|
+| Where it lives | Inside VS Code's terminal | Its own window | Sidebar panel in VS Code |
+| Best for | This course | Complete beginners | Quick questions while coding |
+| Needs terminal? | Yes | No | No |
+
+**Which should you use?** Stick with the **CLI in your VS Code terminal**. Here is why:
+
+- You already have VS Code open with the file explorer on the left and the terminal at the bottom — Claude Code slots right in.
+- You will be running other terminal commands anyway (starting your app, installing packages), so the terminal is not extra effort, it is the same place you are already working.
+- The CLI gives you the most control and is what most vibe coders use.
+
+The **Desktop app** is a fine choice if you find the terminal intimidating at first — it is a proper window you open like any other app and you can point it at your project folder. There is no wrong answer; you can always switch later.
+
+The **VS Code extension** is handy for quick questions ("what does this function do?") without leaving your editor, but for building whole features the CLI or Desktop app is better suited.
+
+### MCP
+
+
+
+# Coming soon (raw material from here on):
+
+* MCP, skills etc.
+* /clear and other /commands
 * Clipboard tools to be a power user (e.g. CopyQ on Mac and Ditto on Win)
 * Optional: Docker
 * Gemini CLI
