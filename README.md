@@ -78,11 +78,12 @@ Now you can decide if that change was fine or not. That's the main core idea of 
 6. Go back to VSCode as you can now use your GitHub account to login so all your VScode settings, extensions and preferences will be synced when you re-install on a new computer: ![VSCode Sync Settings](images/007-sync-vscode.png). If the image isn't enought then [here is the detailed instructions](https://code.visualstudio.com/docs/configure/settings-sync).
 7. Click "Extensions" in the top left icon tabs and install [VSCode extensions](VScodeExtensions.md)
 8. Download & Install [NodeJS](https://nodejs.org/en/download). Needed to run Claude Code, many other tools we'll be using, and for the vibe coded apps to run locally.
-9. Install a **container runtime** — think of it as a small isolated box that lets apps run on your machine without cluttering it. Several tools need this behind the scenes. Often mentioned as "Docker needed":
+9. Install Hasura (Back-end API engine) CLI `sudo curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | bash`  on Mac/Linux & [follow Windows instructions here](https://hasura.io/docs/2.0/hasura-cli/install-hasura-cli).
+10. Install a **container runtime** — think of it as a small isolated box that lets apps run on your machine without cluttering it. Several tools need this behind the scenes. Often mentioned as "Docker needed":
    - **Mac:** Install [Colima](https://formulae.brew.sh/formula/colima) (free, lightweight). Open your terminal and run: `brew install colima docker` then `colima start`. That's it.
    - **Windows:** Install [Rancher Desktop](https://rancherdesktop.io/) (free, lighter than Docker Desktop). Download the installer, run it, and accept the defaults.
    - **Either platform (heavier version):** [Docker Desktop](https://docs.docker.com/desktop/) - it has a visual interface so you can see what's running. The free tier is enough for personal use.
-10. Finally install Claude Code from your terminal window on Mac/Linux: `curl -fsSL https://claude.ai/install.sh | bash` & on Win: `irm https://claude.ai/install.ps1 | iex`
+11. Finally install Claude Code from your terminal window on Mac/Linux: `curl -fsSL https://claude.ai/install.sh | bash` & on Win: `irm https://claude.ai/install.ps1 | iex`
 
 ## Claude Code: CLI, Desktop, or Extension?
 
