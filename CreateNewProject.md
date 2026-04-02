@@ -38,4 +38,20 @@ your-project/
 
 **`static/`** is for files that go out to the browser exactly as they are — a logo image, a favicon, a PDF. Drop a file here and reference it as `/your-file.png` from anywhere in the app.
 
-A `.svelte` file is just HTML, CSS, and a little JavaScript (well TypeScript that is just a type safe JavaScript). All in one file. You do not need to know how to write it — Claude will write it for you. But if you open one it will look familiar: tags like `<h1>`, `<button>`, `<p>`, and a `<style>` block at the bottom if you know the basic HTML.
+A `.svelte` file is just HTML and a little JavaScript (well TypeScript that is just a type safe JavaScript). All in one file. You do not need to know how to write it — Claude will write it for you. But if you open one it will look familiar: tags like `<h1>`, `<button>`, `<p>`. A typical `.svelte` file looks like this:
+
+```svelte
+<script lang="ts">
+  // logic goes here — variables, functions, data fetching
+  let count = 0;
+</script>
+
+<div class="p-4 text-center">
+  <h1 class="text-2xl font-bold">Hello</h1>
+  <button class="bg-blue-500 text-white px-4 py-2 rounded" onclick={() => count++}>
+    Clicked {count} times
+  </button>
+</div>
+```
+
+`<script>` at the top holds the logic. The HTML below it is the visual part. Notice there is no `<style>` block at the bottom — instead of writing CSS manually we use **Tailwind** classes directly on the elements (like `text-2xl` (2x text size), `font-bold`, `bg-blue-500` (background blue)). Tailwind is a library of ready-made style classes so you describe how something looks right where the element is, without switching to a separate file.
