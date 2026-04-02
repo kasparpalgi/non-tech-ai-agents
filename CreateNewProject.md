@@ -1,25 +1,36 @@
 # Creating a New Project
 
-Gerring started quickly with a new project.
+Getting started quickly with a new project.
 
-## 1. Clone the Boilerplate
+## 1. Create Your Own Repo from the Boilerplate
 
 * Open [the boilerplate repo](https://github.com/kasparpalgi/svelte-hasura-boilerplate)
-* At the top right of the list of repo's files/folders click the green "Code" button and from the dropdown menu "Open with GitGub Desktop"
+* Click the green **"Use this template"** button near the top right of the page, then choose **"Create a new repository"**.
 
-[Start cloning](CreateNewProject.md)
+![Use this template button](images/009-useTemplate.png)
 
-* Allow it to open the GitHub desktop and see if the local path is where you want to clone (download) the repository. Then click the "Clone" button and you're done.
+* On the next screen:
+  * **Owner** — make sure it shows your GitHub username, not someone else's.
+  * **Repository name** — type the name you want, e.g. `myapp`.
+  * Set the visibility as **Pprivate** (or Public if you prefer).
+  * Click **"Create repository"**.
+
+GitHub creates a fresh copy of the boilerplate under your account with your chosen name.
+
+## 2. Clone Your New Repo to Your Machine
+
+* On your new repo's page, click the green **"Code"** button and choose **"Open with GitHub Desktop"**.
+* Allow the browser to open GitHub Desktop, confirm the local path (where it will save on your computer), and click **"Clone"**.
 
 ![](images/010-cloneDesktopApp.png)
 
-## 2. Open the project, test & install
+## 3. Open the project, test & install
 
 * `CMD/CTRL + SHIFT + A` in the GitHub desktop will open the project in the VSCode
 * In the terminal first run `npx playwright test` and see that playwright works. It shall open for a short period a Chrome instance, close it and display in the terminal a green success: "1 passed". If it prompts that Playwright not installed and asks for confirmation then hit ENTER.
 * Install the project `npm run i` and run the dev server `npm run dev`. Now you shall see "Hello world" when you open [localhost:5173](http://localhost:5173/) in your browser.
 
-## 3. Understanding the file structure
+## 4. Understanding the file structure
 
 ```
 your-project/
