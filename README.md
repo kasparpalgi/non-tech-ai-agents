@@ -78,7 +78,8 @@ Now you can decide if that change was fine or not. That's the main core idea of 
 6. Go back to VSCode as you can now use your GitHub account to login so all your VScode settings, extensions and preferences will be synced when you re-install on a new computer: ![VSCode Sync Settings](images/007-sync-vscode.png). If the image isn't enought then [here is the detailed instructions](https://code.visualstudio.com/docs/configure/settings-sync).
 7. Click "Extensions" in the top left icon tabs and install [VSCode extensions](VScodeExtensions.md)
 8. Download & Install [NodeJS](https://nodejs.org/en/download). Needed to run Claude Code, many other tools we'll be using, and for the vibe coded apps to run locally.
-9. Finally install Claude Code from your terminal window on Mac/Linux: `curl -fsSL https://claude.ai/install.sh | bash` & on Win: `irm https://claude.ai/install.ps1 | iex`
+9. Download & Install [Docker Desktop](https://docs.docker.com/desktop/) or better I would suggest lightweight alternative [Colima](https://formulae.brew.sh/formula/colima) (Mac/Linux)
+10. Finally install Claude Code from your terminal window on Mac/Linux: `curl -fsSL https://claude.ai/install.sh | bash` & on Win: `irm https://claude.ai/install.ps1 | iex`
 
 ## Claude Code: CLI, Desktop, or Extension?
 
