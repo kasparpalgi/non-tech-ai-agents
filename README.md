@@ -316,26 +316,228 @@ Outcome: You are not limited to what ships with Claude Code — a whole ecosyste
 
 ---
 
-# Coming soon (raw material from here on):
+## Slash Commands — Quick Instructions for Claude
 
-* /clear and other /commands
-* Clipboard tools to be a power user (e.g. CopyQ on Mac and Ditto on Win)
-* Optional: Docker
-* Gemini CLI
+When Claude Code is running and you see the `>` prompt, type `/` to see a list of all available commands. These are shortcuts that tell Claude to do something specific without you writing a long sentence every time.
 
-## Your First Workflow
-* How modern development actually works
-* Making small changes safely
-* The feedback loop: edit → run → fix
-  
-Outcome: You understand how to work, not just what tools to use.
+| Command | What it does |
+|---|---|
+| `/help` | Shows all commands and what each one does |
+| `/clear` | Wipes the conversation history and starts fresh |
+| `/review` | Asks Claude to summarise the recent changes it made |
+| `/exit` | Closes Claude Code (`Ctrl+C` also works) |
+
+**When to use `/clear`:** Claude's working memory in a long session can fill up. It may start forgetting what you discussed earlier or get confused by old context. `/clear` resets it — like opening a new browser tab. Your files are untouched; only the conversation history clears.
+
+Outcome: You control the session with quick commands instead of long typed instructions.
+
+---
+
+## Clipboard History — A Small Tool With Big Payoff
+
+Your clipboard holds one thing at a time by default. Clipboard history tools remember everything you copied so you can paste anything from the last hour, not just the last item.
+
+| Tool | Platform |
+|---|---|
+| **CopyQ** | Mac, Windows, Linux — free and open source |
+| **Ditto** | Windows only — free |
+| Built-in | macOS Sonoma and later has basic clipboard history |
+
+After installing, press the shortcut (usually `Ctrl+Shift+V`) to pull up your copy history and click what you want to paste.
+
+Outcome: Never lose a copied key, snippet, or block of text mid-session.
+
+---
+
+## Optional: Docker — Apps in a Box
+
+Docker runs an app inside an isolated "container" on your machine. The app behaves exactly the same on every computer — yours, a colleague's, or a server. This is the standard solution to "it works on my machine but not yours."
+
+You do not need Docker for this course. Most apps run fine without it. But if you ever clone a project and its README says *"run with Docker"*, now you know what that means. Install it when a project needs it: [docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop).
+
+Outcome: You know what Docker is and when to install it.
+
+---
+
+## Gemini CLI — Google's Alternative
+
+Gemini CLI is Google's equivalent of Claude Code. Same idea: open a terminal, type `gemini`, and get an AI assistant that reads your files and runs commands.
+
+**When to consider it:**
+- You want a second opinion — running the same task through both Claude and Gemini often surfaces different approaches.
+- Your project is deep in Google's ecosystem (Google Cloud, Workspace, BigQuery).
+- The free tier matters — Gemini CLI currently offers a generous free allowance.
+
+**How to install:**
+
+```
+npm install -g @google/generative-ai-cli
+```
+
+Then log in:
+
+```
+gemini auth login
+```
+
+Everything you have learned here applies directly — the concepts are the same, just a different model behind them.
+
+Outcome: You are not locked into one AI tool and can reach for whichever fits the task.
+
+---
+
+# PART II — Building Your First App
+
+You now have all the tools. This part is about putting them to work.
+
+---
+
+## Markdown — The Formatting Language You Already Use
+
+Markdown is how developers write documentation, README files, and notes. It is plain text with a small number of symbols that turn into formatting when rendered. This entire textbook is written in Markdown.
+
+The symbols you need to recognise:
+
+| You type | You get |
+|---|---|
+| `# Heading` | Big heading |
+| `## Subheading` | Smaller heading |
+| `**bold**` | **Bold** |
+| `*italic*` | *Italic* |
+| `` `code` `` | `Inline code` |
+| `- item` | Bullet point |
+
+Files ending in `.md` are Markdown files. To preview one in VS Code: open the file, then press `Cmd+Shift+V` (Mac) or `Ctrl+Shift+V` (Windows). A rendered preview appears beside the raw text.
+
+You do not need to memorise these — Claude will write Markdown for you. But recognising the symbols means README files, skill files, and documentation all make sense at a glance instead of looking like noise.
+
+Outcome: Every `.md` file in every project you open is immediately readable.
+
+---
 
 ## Cloning Your First Boilerplate
-* What a boilerplate really is
-* Finding and cloning a repo using GitHub Desktop
 
-Outcome: You now have a real project running locally.
+A **boilerplate** is a ready-made project template — someone built the skeleton of an app and put it on GitHub for anyone to copy and build on top of. Starting from a boilerplate saves hours or days of setup.
 
-# TODO:
-* Markdown
-* Web
+Copying a GitHub project to your machine is called **cloning**.
+
+### Finding a boilerplate
+
+Search GitHub for what you want to build:
+
+- `nextjs saas starter` — a web app with login and payments already wired up
+- `chrome extension starter` — a browser extension template
+- `landing page template` — a simple marketing site
+
+Look for repos with many stars (★) — that usually means they are actively maintained and come with good documentation.
+
+### Cloning with GitHub Desktop
+
+1. On the GitHub page of the boilerplate, click the green **Code** button.
+2. Click **Open with GitHub Desktop**.
+3. GitHub Desktop asks where to save it on your machine — pick a folder you will remember.
+4. Click **Clone**.
+
+The project now lives on your computer. Open it in VS Code via `File → Open Folder` and select the folder GitHub Desktop created.
+
+### Cloning from inside VS Code
+
+Press `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac), type `clone`, select **Git: Clone**, and paste the GitHub URL. VS Code downloads the project and offers to open it immediately.
+
+Outcome: You have a real working project on your machine — the starting point for everything you build next.
+
+---
+
+## Your First Workflow
+
+Building with Claude Code follows a simple rhythm. Every vibe coder uses roughly this same loop:
+
+### 1. Describe what you want
+
+Open your project in VS Code, start Claude Code in the terminal (`claude`), and describe the change in plain English:
+
+> *"Add a contact form to the home page with a name field, email field, and a submit button."*
+
+Be specific about what you see and what you want. Claude reads your files, decides what to change, and makes the edits.
+
+### 2. Review the changes
+
+Claude shows you a diff — a colour-coded view of exactly what it changed. Green lines are additions, red lines are removals (the same view you saw in the GitHub section). You do not need to understand every line — just check it looks roughly like what you asked for.
+
+If something is off, say so: *"The button should be on the right side, not the left."* Iterate until it looks right.
+
+### 3. Test it
+
+Run the app and try it. On a web project you typically type:
+
+```
+npm run dev
+```
+
+Then open `http://localhost:3000` in your browser. Does it look right? Does the button do what it should?
+
+### 4. Commit when it works
+
+Once you're happy, go to VS Code's Source Control panel (the branch icon on the left sidebar), write a one-line note about what you built — *"Add contact form"* — and click **Commit**. This saves a snapshot. If anything breaks later, you can return to this working version.
+
+### Make small changes, not big ones
+
+The most common mistake is asking Claude for too much at once: *"Build me a full website with login, dashboard, payment system, and profile page."* Claude will try — and something will break.
+
+Build in small steps instead:
+1. Get the home page visible.
+2. Add the contact form.
+3. Wire up the email sending.
+4. Commit after each step.
+
+Each commit is a checkpoint. Small steps mean small mistakes that are easy to fix.
+
+### The loop
+
+```
+Describe → Claude edits → Review → Test → Commit → repeat
+```
+
+This is the whole process. Every app ever built — simple or complex — comes down to repeating this cycle. The skill is not memorising commands. It is getting good at describing what you want clearly and reading what Claude produces.
+
+Outcome: You understand how to work, not just what tools to use.
+
+---
+
+## Scraping the Web
+
+**Web scraping** means reading a website and extracting specific information automatically — instead of visiting a page and copying data by hand. You describe what you want and Claude does the browsing for you.
+
+This requires the **Playwright MCP** installed earlier. If you skipped it:
+
+```
+claude mcp add playwright -- npx -y @playwright/mcp@latest
+```
+
+### Extracting information from a page
+
+Open Claude Code and describe what you want:
+
+> *"Go to [URL] and tell me the current price shown on the page."*
+
+Claude opens a real browser in the background, loads the page, and reads back what you asked for.
+
+### Collecting a list
+
+> *"Go to [URL] and give me all the article titles listed on the page."*
+
+Claude scrolls, reads, and returns the list as plain text.
+
+### Saving data to a file
+
+> *"Go to [URL], collect all the names and email addresses from the team section, and save them to a file called team.csv."*
+
+Claude visits the page, extracts the data, and writes the file into your project folder.
+
+### Things to know
+
+- **Respect the site's rules.** Most sites have a `robots.txt` file that says what is allowed. Check it if you are building something automated.
+- **Login-protected pages.** If the content requires logging in, Claude will need credentials for that session. Keep those private and do not commit them to GitHub.
+- **Pages that load slowly.** Some sites build their content with JavaScript after the initial page load. Playwright handles this automatically because it uses a real browser.
+
+Outcome: You can pull data from any public web page without manual copy-pasting.
