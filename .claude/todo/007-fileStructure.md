@@ -1,0 +1,1 @@
+Write a super simple Svelte file Structure part at the bottom of /CreateNewProject.md
