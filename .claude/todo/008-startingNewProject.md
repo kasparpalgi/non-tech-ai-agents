@@ -1,0 +1,1 @@
+See my instructions I have created to clone the boilerplate and starting the project there but now I think it's not the bestw way as I will have the project name "svelte-hasurta-boilerplate" like that. User shall be able to create a new repo in his account with name "myapp" or whatever name desired and then get the boilerplate there. Update instructions.
