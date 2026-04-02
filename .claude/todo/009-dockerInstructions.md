@@ -1,0 +1,1 @@
+In README.md from line 81 see the Docker install instructions that are rather board. MAke them not too long but easier and simpler for non-tech people. Also, include lightweight Win alternative if applicable,
