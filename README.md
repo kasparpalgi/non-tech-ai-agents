@@ -56,6 +56,16 @@ If you can't see the terminal, then take from the top menu `Terminal` the first 
 
 Same way like you can have in multiple files open above, you can have multiple terminals side by side. Move your mouse to the top right of your terminal window and click the chewron down on the right side of the + icon, pick `Split Terminal` and choose your favourite terminal (eg. `zsh` on Mac).
 
+#### Some of the most useful keyboard shortcuts
+
+* `CMD/CTRL + P` Quick Open (files, symbols). Start typing any file's name...
+* `CMD/CTRL + P` Command Palette (run commands) - start typing anything in menus eg. open settings, keyboard shortcuts, toggle terminal, clear terminal, ...
+* `CMD/CTRL + F` Find in file (like everywhere - easy)
+* `CMD/CTRL + Shift + F` Find in workspace (in all files in the currently open project). You can also relace here in all files.
+* `CMD/CTRL + H` Replace in file
+* `CMD/CTRL + G` Go to line (eg. to line 201)
+* `CMD/CTRL + W` Close the current file (tab - just like in a browser)
+
 ## GitHub
 
 Git is the standard version controlling (what?) today. The main benefit for you is to see what your agent (or you or your collegue/friend) has changed and either approve it, improve it or roll it back if you think it's no good and shall be done from scratch. Simple view:
