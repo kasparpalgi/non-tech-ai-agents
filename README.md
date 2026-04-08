@@ -38,6 +38,8 @@ Files and folders that are green, are the ones that haven't been commited (uploa
 
 In the top of the text editor you have all the open files in the tabs.
 
+**PRO TIP**: Make some small changes in any file, commit change to GitHub and now right click on that file and pick "Open Timeline" and now at the bottom of the Explorer click on the commit message, you entered. Vola, you see the changes in the file. Feel like a power user already? 🚀
+
 ![Open tabs](images/003-open-tabs.png)
 
 From the file explorer you can just click to open a new file as a new tab in the text editor part but you can also drag'n'drop the new (or the same file) into the text editor's left or right half of the text and it will open side-by-side. Super handy!
